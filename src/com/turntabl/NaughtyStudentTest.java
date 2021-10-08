@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class TestNaughtyStudent {
+public class NaughtyStudentTest {
     @Test
     public void testNaughtyStudentIsAKindOfStudent(){
         Student student = new Student(List.of(2.0, 1.3, 2.2, 4.5, 0.0));

@@ -21,7 +21,37 @@ public class RegisterTest {
 
 //        System.out.println(result);
 //        System.out.println(register.getRegister());
-        
+
         assertEquals(register.getRegister(), result);
+    }
+
+    @Test
+    public void testGetRegisterByLevel(){
+        Student student1 = new Student("Kofi", HasLevel.Level.FirstYear);
+        Student student2 = new Student("Alex", HasLevel.Level.FirstYear);
+        Student student3 = new Student("Alex", HasLevel.Level.SecondYear);
+
+        Register register = new Register(List.of(student1, student2, student3));
+
+        List<String> result = new ArrayList<>();
+        result.add(student1.getName());
+        result.add(student2.getName());
+
+//        System.out.println(result);
+//        System.out.println(register.getRegisterByLevel(HasLevel.Level.FirstYear));
+
+        assertEquals(register.getRegisterByLevel(HasLevel.Level.FirstYear), result);
+
+    }
+
+    @Test
+    public void testGprintReport() {
+        Student student1 = new Student("Kofi", HasLevel.Level.FirstYear);
+        Student student2 = new Student("Alex", HasLevel.Level.FirstYear);
+        Student student3 = new Student("Alex", HasLevel.Level.SecondYear);
+
+        Register register = new Register(List.of(student1, student2, student3));
+
+        register.printReport();
     }
 }

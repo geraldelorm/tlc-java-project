@@ -3,10 +3,10 @@ package com.turntabl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student implements Nameable{
+public class Student implements Nameable, HasLevel{
     private String name;
     List<Double> grades;
-
+    private Level level;
 
     public Student(List<Double> grades) {
         this.grades = grades;
@@ -14,6 +14,15 @@ public class Student implements Nameable{
 
     public Student(String name){
         this.name = name;
+    }
+
+    public Student(Level level){
+        this.level = level;
+    }
+
+    public Student(String name, Level level){
+        this.name = name;
+        this.level = level;
     }
 
     public double getAverageGrade(){
@@ -28,5 +37,10 @@ public class Student implements Nameable{
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public Level getLevel() {
+        return level;
     }
 }
