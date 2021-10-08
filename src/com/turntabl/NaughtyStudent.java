@@ -1,13 +1,11 @@
 package com.turntabl;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
-    List<Double> grades = new ArrayList<>();
+public class NaughtyStudent extends Student{
 
-    public Student(List<Double> grades) {
-        this.grades = grades;
+    public NaughtyStudent(List<Double> grades) {
+        super(grades);
     }
 
     public double getAverageGrade(){
@@ -15,7 +13,9 @@ public class Student {
         for (Double grade: grades){
             sum += grade;
         }
+
         double averageGrade = sum/grades.size();
-        return averageGrade;
+
+        return averageGrade + (averageGrade * 0.1);
     }
 }
