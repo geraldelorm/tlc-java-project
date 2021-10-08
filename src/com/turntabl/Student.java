@@ -3,11 +3,17 @@ package com.turntabl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
-    List<Double> grades = new ArrayList<>();
+public class Student implements Nameable{
+    private String name;
+    List<Double> grades;
+
 
     public Student(List<Double> grades) {
         this.grades = grades;
+    }
+
+    public Student(String name){
+        this.name = name;
     }
 
     public double getAverageGrade(){
@@ -17,5 +23,10 @@ public class Student {
         }
         double averageGrade = sum/grades.size();
         return averageGrade;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }
