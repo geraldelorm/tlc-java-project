@@ -28,28 +28,53 @@ public class Register {
         return nameOfStudentsAtLevel;
     }
 
-    public void printReport(){
-//        List<String> FirstYearNames = new ArrayList<>();
-//        List<String> SecondYearNames = new ArrayList<>();
-//        List<String> ThirdYearNames = new ArrayList<>();
-//        List<String> FourthYearNames = new ArrayList<>();
-//        for(Student student: students){
-//            if(student.getLevel() == HasLevel.Level.FirstYear){
-//                FirstYearNames.add(student.getName());
-//            } else if(student.getLevel() == HasLevel.Level.SecondYear){
-//                SecondYearNames.add(student.getName());
-//            } else if (student.getLevel() == HasLevel.Level.ThirdYear){
-//                ThirdYearNames.add(student.getName());
-//            } else if (student.getLevel() == HasLevel.Level.ForthYear){
-//                FourthYearNames.add(student.getName());
-//            }
-//        }
-//        System.out.println("--------------------------------------------");
-//        System.out.println(FirstYearNames.stream();
-//        }));
-//        for(int i = 0; i < 100; i++){
-//            System.out.println(FirstYearNames[i] + SecondYearNames[i] + ThirdYearNames[i] + FourthYearNames[i]);
-//        }
-//        return report;
+    public String printReport(){
+        String formatted = "-----------------------------------" + "\n";
+        List<String> F = new ArrayList<>();
+        List<String> S = new ArrayList<>();
+        List<String> T = new ArrayList<>();
+        List<String> FH = new ArrayList<>();
+
+        for (Student student: students){
+            if(student.getLevel() == HasLevel.Level.FirstYear){
+                F.add(student.getName());
+            }else if (student.getLevel() == HasLevel.Level.SecondYear){
+                S.add(student.getName());
+            }else if (student.getLevel() == HasLevel.Level.ThirdYear){
+                T.add(student.getName());
+            } else if (student.getLevel() == HasLevel.Level.ForthYear){
+                FH.add(student.getName());
+            }
+        }
+        formatted += "First Year" + "\n";
+        for (String n: F){
+            formatted += n + "\n";
+        }
+
+        formatted += "\n";
+
+        formatted += "------------------" + "\n";
+        formatted += "Second Year" + "\n";
+        for (String n: S){
+            formatted += n + "\n" ;
+        }
+
+        formatted += "\n";
+
+        formatted += "------------------" + "\n";
+        formatted += "Third Year" + "\n";
+        for (String n: T){
+            formatted += n + "\n";
+        }
+
+        formatted += "\n";
+
+        formatted += "------------------" + "\n";
+        formatted += "Fourth Year" + "\n";
+        for (String n: FH){
+            formatted += n + "\n";
+        }
+
+        return formatted;
     }
 }

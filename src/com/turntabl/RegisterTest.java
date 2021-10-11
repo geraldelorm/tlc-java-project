@@ -47,11 +47,13 @@ public class RegisterTest {
     @Test
     public void testGprintReport() {
         Student student1 = new Student("Kofi", HasLevel.Level.FirstYear);
-        Student student2 = new Student("Alex", HasLevel.Level.FirstYear);
-        Student student3 = new Student("Alex", HasLevel.Level.SecondYear);
+        Student student2 = new Student("Ama", HasLevel.Level.ThirdYear);
+        Student student3 = new Student("Alex", HasLevel.Level.FirstYear);
+        Student student4 = new Student("Kojo", HasLevel.Level.ForthYear);
+        Student student5 = new Student("Alex", HasLevel.Level.SecondYear);
 
-        Register register = new Register(List.of(student1, student2, student3));
+        Register register = new Register(List.of(student1, student2, student3, student4, student5));
 
-        register.printReport();
+        System.out.println(register.printReport());
     }
 }

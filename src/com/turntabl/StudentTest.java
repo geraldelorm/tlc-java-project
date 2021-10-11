@@ -14,5 +14,4 @@ public class StudentTest {
         assertEquals(student.getAverageGrade(), 2.0, 0);
     }
 
-
 }
